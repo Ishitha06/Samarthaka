@@ -229,7 +229,13 @@ nav ul li a:hover {
     text-align: center;
     text-decoration: none;
     transition: background 0.3s ease;
-    overflow: visible;
+    overflow: hidden;
+}
+
+.tab-wrapper {
+    display: inline-block;     /* ⭐ keeps items in rows without affecting others */
+    vertical-align: top;
+    margin: 10px;
 }
 
 .tab:hover {
@@ -252,7 +258,7 @@ nav ul li a:hover {
 
 /* ⭐ NEW — show box on hover */
 .tab:hover .box {
-    max-height: 120px; /* how tall the box opens */
+    max-height: 150px; /* how tall the box opens */
     padding: 10px;
     /* background-color: #8ecae6; */
 }
