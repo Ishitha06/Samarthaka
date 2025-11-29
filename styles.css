@@ -209,25 +209,52 @@ nav ul li a:hover {
 
 .tab-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 20px;
 }
 
 .tab {
+    display: block;
+    position: relative;
     background: #004080;
     color: white;
-    padding: 12px 20px;
-    width: 200px;
-    height: 50px;
+    padding: 15px;
+    width: 250px;
+    height: auto;
+    margin-bottom: 15px;
     border-radius: 8px;
+    font-size: 18px;
     text-align: center;
     text-decoration: none;
-    transition: 0.3s;
+    transition: background 0.3s ease;
+    overflow: visible;
 }
 
 .tab:hover {
-    background: #ffcc00;
+    background: #8ecae6;
     color: black;
+}
+
+.tab .box {
+    max-height: 0;       /* start collapsed */
+    overflow: hidden;
+    position: relative;  /* ⭐ CHANGE: remove absolute to make visible */
+    top: 10px;           /* ⭐ slight spacing below tab */
+    width: 100%;
+    background: #a3b18a;
+    padding: 0 10px;
+    border-radius: 8px;
+    margin-top: 8px;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+/* ⭐ NEW — show box on hover */
+.tab:hover .box {
+    max-height: 120px; /* how tall the box opens */
+    padding: 10px;
+    /* background-color: #8ecae6; */
 }
 
 /* --------------------------------------------------
