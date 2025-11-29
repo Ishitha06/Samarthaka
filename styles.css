@@ -8,8 +8,7 @@ body {
     background: #eae0d5;
     margin: 0;
     padding-top: 45px;
-    font-family: 'Cinzel',serif;
-
+    font-family: 'Cinzel', serif;
 }
 
 /* NAVIGATION */
@@ -17,7 +16,6 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 15px 40px;
-    /* background: #3d348b; */
     background: #c6ac8f;
     color: white;
     position: fixed;
@@ -45,15 +43,10 @@ nav ul li a:hover {
 /* HERO SECTION */
 .hero {
     height: 85vh;
-    /* background: linear-gradient(to bottom,#7678ed, #7678ed); */
-    /* background: linear-gradient(to bottom,#cb997e, #cb997e); */
-    background: linear-gradient(to bottom,#5e503f, #5e503f);
-
-
+    background: linear-gradient(to bottom, #5e503f, #5e503f);
     color: white;
     text-align: center;
     padding-top: 120px;
-    margin-top: 0px;
 }
 
 .hero span {
@@ -67,19 +60,16 @@ nav ul li a:hover {
     font-family: 'Playfair Display', serif;
 }
 
+/* INFO BOX */
 .info-box {
     width: 350px;
-    height: 400px;
-    /* padding-left: 50px; */
+    height: 410px;
     margin-top: 65px;
     margin-left: 50px;
     padding: 20px;
-    background: white;
-    color: black;
-    padding: 20px;
-    border-radius: 10px;
-    /* background-color: #abc4ff; */
     background-color: #a3b18a;
+    color: black;
+    border-radius: 10px;
     font-size: 1.05rem;
 }
 
@@ -91,11 +81,9 @@ nav ul li a:hover {
 
 #head {
     font-size: 40px;
-    margin-left: 600px;
-    margin-bottom: -30px;
+    margin-bottom: 25px;
+    text-align: center;
 }
-
-
 
 .city-section img {
     width: 70%;
@@ -103,31 +91,38 @@ nav ul li a:hover {
 }
 
 .city-section p {
-    margin-left: 150px;
     font-size: 28px;
+    margin-top: 20px;
 }
 
 .infoimg {
     display: flex;
-    margin: auto;
+    flex-wrap: wrap;
+    gap: 20px;
     background-color: #eae0d5;
-
+    flex-wrap: wrap;
 }
+
 .maps {
     display: flex;
-    width: 550px;
-    height: auto;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
 }
 
 .maps img {
-    margin-right: 30px;
+    width: 280px;
+    max-width: 100%;
+    border-radius: 10px;
 }
 
 /* SDG SECTION */
-
 #head2 {
     font-size: 40px;
-
+    text-align: center;
 }
 
 .sdg-section {
@@ -138,6 +133,7 @@ nav ul li a:hover {
 .sdg-container {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     gap: 25px;
 }
 
@@ -149,30 +145,21 @@ nav ul li a:hover {
     border-radius: 12px;
     text-align: center;
     transition: 0.3s;
-
     position: relative;
     overflow: hidden;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; 
-
+    justify-content: center;
 }
 
 .sdg-card p {
-
     font-size: 35px;
     color: green;
     font-weight: bold;
-
 }
 
-
-/* CORRECTED */
-
-/* ⭐⭐⭐ ADDED — BACKGROUND IMAGE + OPACITY LAYER ⭐⭐⭐ */
-
+/* BACKGROUND IMAGE LAYER */
 .sdg-card::before {
     content: "";
     position: absolute;
@@ -182,28 +169,23 @@ nav ul li a:hover {
     height: 100%;
     background-size: cover;
     background-position: center;
-    opacity: 0.35;   /* ⭐ adjust opacity */
+    opacity: 0.35;
     z-index: 0;
 }
 
-/* ⭐ each SDG card background image */
 .sdg-card:nth-child(1)::before {
     background-image: url("assets/sdg7.webp");
 }
-
 .sdg-card:nth-child(2)::before {
     background-image: url("assets/sdg9.svg");
 }
-
 .sdg-card:nth-child(3)::before {
     background-image: url("assets/sdg11.png");
 }
-
 .sdg-card:nth-child(4)::before {
     background-image: url("assets/sdg13.png");
 }
 
-/* ⭐ keep text and images on top */
 .sdg-card * {
     position: relative;
     z-index: 1;
@@ -214,26 +196,20 @@ nav ul li a:hover {
     background: #fffbcc;
 }
 
-
-
-/* BUSINESS MODELS */
+/* BUSINESS SECTION */
 .business-section {
     text-align: left;
     padding: 50px;
-    justify-content: center;
 }
-
-
 
 #head3 {
     font-size: 40px;
+    text-align: center;
 }
 
 .tab-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
     gap: 20px;
 }
 
@@ -243,9 +219,8 @@ nav ul li a:hover {
     padding: 12px 20px;
     width: 200px;
     height: 50px;
-    text-align: center;
-    align-items: center;
     border-radius: 8px;
+    text-align: center;
     text-decoration: none;
     transition: 0.3s;
 }
@@ -255,4 +230,80 @@ nav ul li a:hover {
     color: black;
 }
 
+/* --------------------------------------------------
+   RESPONSIVE MEDIA QUERIES
+-------------------------------------------------- */
 
+/* TABLETS */
+@media (max-width: 900px) {
+    nav {
+        padding: 15px 20px;
+    }
+
+    .hero span {
+        font-size: 50px;
+    }
+
+    .info-box {
+        margin-left: 0;
+        margin-top: 20px;
+        width: 80%;
+    }
+
+    #head {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .city-section img {
+        width: 90%;
+    }
+}
+
+/* MOBILE PHONES */
+@media (max-width: 600px) {
+
+    nav ul {
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .hero span {
+        font-size: 35px;
+    }
+
+    #quote {
+        font-size: 16px;
+    }
+
+    .info-box {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .city-section p {
+        font-size: 20px;
+    }
+
+    .maps {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .sdg-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sdg-card {
+        width: 90%;
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .tab {
+        width: 90%;
+        height: auto;
+        padding: 15px;
+    }
+}
